@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+*.pyc
+data/images/
+data/index/
+!data/images/.gitkeep
+!data/index/.gitkeep
+.vscode/
