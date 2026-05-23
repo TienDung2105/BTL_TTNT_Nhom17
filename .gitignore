@@ -1,8 +1,10 @@
 .venv/
 __pycache__/
 *.pyc
-data/images/
-data/index/
+
+data/images/*
 !data/images/.gitkeep
+data/index/*
 !data/index/.gitkeep
+
 .vscode/
