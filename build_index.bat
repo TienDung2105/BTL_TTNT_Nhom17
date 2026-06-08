@@ -26,9 +26,9 @@ echo   data\styles.csv
 echo   data\images\*.jpg
 echo.
 echo Build nhanh 500 anh:
-echo   "%PY_CMD%" -m backend.build_index --limit 500
+echo   "%PY_CMD%" -m model.build_index --limit 500
 echo.
 
-"%PY_CMD%" -m backend.build_index
+"%PY_CMD%" -m model.build_index
 
 pause

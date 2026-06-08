@@ -7,7 +7,7 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
 from backend.config import BASE_DIR, IMAGE_DIR, TOP_K_DEFAULT
-from backend.search_engine import SearchEngine
+from model.search_engine import SearchEngine
 
 #Khởi tạo FastAPI
 app = FastAPI(title="AI Image Retrieval", version="1.0.0")
@@ -71,7 +71,7 @@ async def search_image(
     if engine is None:
         raise HTTPException(
             status_code=503,
-            detail="Index is not ready. Run: python -m backend.build_index",
+            detail="Index is not ready. Run: python -m model.build_index",
         )
     #Lấy đuôi file ảnh
     suffix = Path(file.filename or "").suffix.lower() or ".jpg"

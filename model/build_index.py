@@ -13,7 +13,7 @@ from backend.config import (
     METADATA_FILE,
     STYLES_CSV,
 )
-from backend.feature_extractor import FeatureExtractor
+from model.feature_extractor import FeatureExtractor
 
 
 def build_metadata(row):

@@ -6,7 +6,7 @@ from backend.config import (
     METADATA_FILE,
 )
 
-from backend.feature_extractor import FeatureExtractor
+from model.feature_extractor import FeatureExtractor
 
 
 class SearchEngine:
@@ -38,7 +38,7 @@ class SearchEngine:
             or not METADATA_FILE.exists()
         ):
             raise FileNotFoundError(
-                "Index not found. Run: python -m backend.build_index"
+                "Index not found. Run: python -m model.build_index"
             )
 
         #Load vector embeddings
