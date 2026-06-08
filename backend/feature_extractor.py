@@ -15,7 +15,7 @@ class FeatureExtractor:
         Khởi tạo mô hình ResNet50 và tiền xử lý ảnh
         """
         try:
-            print("Đang khởi tạo ResNet50...")
+            print("Initializing ResNet50...")
 
             #tải model 
             model = models.resnet50(weights=models.ResNet50_Weights.DEFAULT)
@@ -36,10 +36,10 @@ class FeatureExtractor:
                     std=[0.229, 0.224, 0.225],
                 ),
             ])
-            print("Khởi tạo ResNet50 thành công.")
+            print("ResNet50 initialized successfully.")
 
         except Exception as e:
-            print(f"Lỗi khởi tạo model: {e}")
+            print(f"Model initialization error: {e}")
             raise e
         
     def extract_features(self, image_path):
@@ -80,9 +80,9 @@ class FeatureExtractor:
             return vector
         
         except FileNotFoundError:
-            print(f"Không tìm thấy ảnh: {image_path}")
+            print(f"Image not found: {image_path}")
             return None
         
         except Exception as e:
-            print(f"Lỗi trích xuất đặc trưng: {e}")
+            print(f"Feature extraction error: {e}")
             return None

@@ -3,9 +3,10 @@ from pathlib import Path
 
 from fastapi import FastAPI, File, HTTPException, Query, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
-from backend.config import IMAGE_DIR, TOP_K_DEFAULT
+from backend.config import BASE_DIR, IMAGE_DIR, TOP_K_DEFAULT
 from backend.search_engine import SearchEngine
 
 #Khởi tạo FastAPI
@@ -24,6 +25,7 @@ if IMAGE_DIR.exists():
     app.mount("/static/images", StaticFiles(directory=IMAGE_DIR), name="images")
 
 engine = None
+FRONTEND_INDEX = BASE_DIR / "frontend" / "index.html"
 
 
 @app.on_event("startup")
@@ -45,6 +47,16 @@ def health():
     Kiểm tra trạng thái API và index
     """
     return {"status": "ok", "index_ready": engine is not None}
+
+
+@app.get("/")
+def frontend():
+    """
+    Serve frontend demo.
+    """
+    if not FRONTEND_INDEX.exists():
+        raise HTTPException(status_code=404, detail="Frontend index.html not found.")
+    return FileResponse(FRONTEND_INDEX)
 
 
 @app.post("/api/search")
