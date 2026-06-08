@@ -1,6 +1,5 @@
 # 🛍️ AI Image Retrieval BTL - Hệ thống tìm kiếm ảnh thời trang
 
-> Có thể thêm banner minh họa vào `docs/banner.png` nếu muốn README nhìn nổi bật hơn trên GitHub.
 
 **AI Image Retrieval BTL** là hệ thống demo tìm kiếm ảnh sản phẩm thời trang tương tự bằng Deep Learning. Người dùng chỉ cần upload một ảnh truy vấn, hệ thống sẽ trích xuất đặc trưng ảnh bằng mô hình **ResNet50 pre-trained**, so sánh với tập vector ảnh đã được index, sau đó trả về danh sách sản phẩm có độ tương đồng cao nhất.
 
