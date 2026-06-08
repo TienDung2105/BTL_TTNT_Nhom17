@@ -71,9 +71,6 @@ btl_ai/
 ├── backend/
 │   ├── __init__.py
 │   ├── config.py              # Cấu hình đường dẫn dữ liệu và tham số mặc định
-│   ├── feature_extractor.py   # Trích xuất vector đặc trưng bằng ResNet50
-│   ├── build_index.py         # Tạo embedding index từ dataset
-│   ├── search_engine.py       # Load index và tìm kiếm bằng cosine similarity
 │   └── main.py                # FastAPI app, API search và serve frontend
 ├── data/
 │   ├── images/                # Ảnh sản phẩm dạng {id}.jpg
@@ -84,6 +81,10 @@ btl_ai/
 │       └── metadata.json      # Metadata đã xử lý
 ├── frontend/
 │   └── index.html             # Frontend demo
+├── model
+│   ├── build_index.py         # Tạo embedding index từ dataset
+│   ├── feature_extractor.py   # Trích xuất vector đặc trưng bằng ResNet50
+│   └── search_engine.py       # Load index và tìm kiếm bằng cosine similarity
 |
 ├── build_index.bat            # Script build index trên Windows
 ├── run_backend.bat            # Script chạy backend + frontend qua FastAPI
